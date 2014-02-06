@@ -1,6 +1,7 @@
 module.exports = {
     all: [
         'Gruntfile.js',
-        'src/**/*.js'
+        'src/**/*.js',
+        'test/**/*.js'
     ]
 };

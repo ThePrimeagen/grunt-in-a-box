@@ -13,9 +13,10 @@ module.exports = function(grunt, options) {
         // JSHint is defaulted to true.  Override any jshint options from tasks/options/jshint by overriding jshintOptions
         jshint: true,
         jshintTaskName: 'grunt-contrib-jshint',
-        jshintOptions: {}
+        jshintOptions: {},
+        initConfig: {}
     }, options);
-    var config = {};
+    var config = settings.initConfig;
 
 
     // Loads every module
