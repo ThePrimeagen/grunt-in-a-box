@@ -1,10 +1,27 @@
 {
-    "name": "grunt-in-a-box",
-    "author": "Michael Brady Paulson <michael.b.paulson@gmail.com>",
-    "version": "0.0.1",
-    "dependencies": {
-        "lodash": "*",
-        "grunt-contrib-jshint": "0.1.1",
-        "grunt": "0.4.1"
-    }
+  "name": "grunt-in-a-box",
+  "author": "Michael Brady Paulson <michael.b.paulson@gmail.com>",
+  "version": "0.0.1",
+  "dependencies": {
+    "lodash": "*",
+    "grunt-contrib-jshint": "0.1.1",
+    "grunt": "0.4.1"
+  },
+  "readmeFilename": "README.md",
+  "gitHead": "93a6314a8c0df7b8a114d5a084f179865585a357",
+  "description": "grunt-in-a-box ==============",
+  "main": "src/index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/primeagen/grunt-in-a-box.git"
+  },
+  "keywords": [
+    "grunt",
+    "automation"
+  ],
+  "license": "MIT"
 }
