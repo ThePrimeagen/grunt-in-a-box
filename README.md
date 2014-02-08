@@ -3,12 +3,14 @@ grunt-in-a-box
 
 Grunt in a box is a prepackaged, opinionated grunt system for any javascript library.  It prefers convention over configuration.
 
-Versioning
+Roadmap
 ==========
-Road map:
 * 0.0.x: Basic libraries.  JSHint, requirejs, browserify
+  * Done by end of February
 * 0.1.x: Javascript.next features
+  * Done by end of March
 * 0.2.x: Karma support with auto serving coverage reports.
+  * Done by end of April
 
 How to use
 ==========
@@ -41,6 +43,12 @@ Supported Libraries
 ===================
 Review the versioning to know what the road map is.
 
+Progress
+---------
+0.0.1:  Started the project
+0.0.2:  JSHint
+0.0.3:  Clean
+
 JSHint
 --------
 * defaults `jshint: true`
@@ -57,3 +65,11 @@ JSHint
 }
 ```
 
+Clean
+--------
+* deafults `clean: true`
+```javascript
+{
+    build: ['tmp/', 'bin/', 'dist/']
+}
+```
