@@ -1,6 +1,6 @@
 var _ = require('lodash');
-var MODULES = ['jshint'];
-var BUILD_MODULES = ['jshint'];
+var MODULES = ['clean', 'jshint'];
+var BUILD_MODULES = ['clean', 'jshint'];
 var TEST_MODULES = ['jshint'];
 
 /**
@@ -14,6 +14,12 @@ module.exports = function(grunt, options) {
         jshint: true,
         jshintTaskName: 'grunt-contrib-jshint',
         jshintOptions: {},
+
+        // Clean
+        clean: true,
+        cleanTaskName: 'grunt-contrib-clean',
+        cleanOptions: {},
+
         initConfig: {}
     }, options);
     var config = settings.initConfig;
