@@ -1,3 +1,4 @@
+var path = require('path');
 var _ = require('lodash');
 var MODULES = ['clean', 'jshint'];
 var BUILD_MODULES = ['clean', 'jshint'];
