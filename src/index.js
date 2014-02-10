@@ -24,6 +24,14 @@ module.exports = function(grunt, options) {
     }, options);
     var config = settings.initConfig;
 
+    /**************************************************************
+     * Required for loading modules from within this submodule.
+     *
+     * All code below will look within grunt-in-a-box's node_modules for
+     * grunt tasks.
+     *///----------------------------------------------------------
+    var cwd = process.cwd();
+    process.chdir(path.join(__dirname, '..'));
 
     // Loads every module
     _.forEach(MODULES, function(k) {
@@ -34,6 +42,13 @@ module.exports = function(grunt, options) {
     });
 
     var buildModules = _.filter(BUILD_MODULES, function(k) { return settings[k]; });
+
+    /**************************************************************
+     * Required for loading modules from within this submodule.
+     *
+     * Process reset back to original cwd.
+     *///----------------------------------------------------------
+    process.chdir(cwd);
 
     grunt.initConfig(config);
     grunt.registerTask('default', buildModules);

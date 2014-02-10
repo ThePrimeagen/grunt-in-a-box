@@ -1,7 +1,7 @@
 {
   "name": "grunt-in-a-box",
   "author": "Michael Brady Paulson <michael.b.paulson@gmail.com>",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "dependencies": {
     "lodash": "*",
     "grunt-contrib-jshint": "0.1.1",
