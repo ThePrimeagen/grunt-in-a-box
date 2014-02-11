@@ -1,8 +1,8 @@
 var path = require('path');
 var _ = require('lodash');
-var MODULES = ['clean', 'jshint'];
+var MODULES = ['clean', 'jshint', 'mocha'];
 var BUILD_MODULES = ['clean', 'jshint'];
-var TEST_MODULES = ['jshint'];
+var TEST_MODULES = ['jshint', 'mocha'];
 
 /**
  * The main entry point into the grunt-in-a-box program.  This is where the configuration is passed in.
@@ -14,16 +14,16 @@ module.exports = function(grunt, options) {
         // JSHint is defaulted to true.  Override any jshint options from tasks/options/jshint by overriding jshintOptions
         jshint: true,
         jshintTaskName: 'grunt-contrib-jshint',
-        jshintOptions: {},
 
         // Clean
         clean: true,
         cleanTaskName: 'grunt-contrib-clean',
-        cleanOptions: {},
 
-        initConfig: {}
+        // Mocha
+        mocha: false,
+        mochaTaskName: 'grunt-mocha'
     }, options);
-    var config = settings.initConfig;
+    var config = {};
 
     /**************************************************************
      * Required for loading modules from within this submodule.
@@ -38,11 +38,12 @@ module.exports = function(grunt, options) {
     _.forEach(MODULES, function(k) {
         if (settings[k]) {
             grunt.loadNpmTasks(settings[k + 'TaskName']);
-            config[k] = _.assign(loadConfig(k), settings[k + 'Options']);
+            config[k] = loadConfig(k);
         }
     });
 
     var buildModules = _.filter(BUILD_MODULES, function(k) { return settings[k]; });
+    var testModules = _.filter(TEST_MODULES, function(k) { return settings[k]; });
 
     /**************************************************************
      * Required for loading modules from within this submodule.
@@ -54,6 +55,7 @@ module.exports = function(grunt, options) {
     grunt.initConfig(config);
     grunt.registerTask('default', buildModules);
     grunt.registerTask('build', buildModules);
+    grunt.registerTask('test', testModules);
 };
 
 function loadConfig(module) {
